@@ -2847,8 +2847,8 @@ bool EditorPropertyResource::_is_drop_valid(const Dictionary &p_drag_data) const
 			String ftype = EditorFileSystem::get_singleton()->get_file_type(file);
 
 			if (ftype != "") {
-				RES res = ResourceLoader::load(file);
-				ftype = _get_file_script_name_or_default(res);
+				RES _res = ResourceLoader::load(file);
+				ftype = _get_file_script_name_or_default(_res);
 
 				for (int i = 0; i < allowed_type.get_slice_count(","); i++) {
 					String at = allowed_type.get_slice(",", i).strip_edges();
